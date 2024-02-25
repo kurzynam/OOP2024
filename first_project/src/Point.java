@@ -8,39 +8,15 @@ class Point {
         this.x = x;
         this.y = y;
     }
+
+    public static Point middlePoint(Point p1, Point p2){
+        return new Point(
+                (p1.x + p2.x)/2,
+                (p1.y + p2.y)/2
+        );
+    }
 }
 
 
 
-class Segment {
-    private Point startPoint;
-    private Point endPoint;
 
-    public Segment(Point startPoint, Point endPoint) {
-        this.startPoint = startPoint;
-        this.endPoint = endPoint;
-    }
-
-    public Point getStartPoint() {
-        return startPoint;
-    }
-
-    public void setStartPoint(Point startPoint) {
-        this.startPoint = startPoint;
-    }
-
-    public Point getEndPoint() {
-        return endPoint;
-    }
-
-    public void setEndPoint(Point endPoint) {
-        this.endPoint = endPoint;
-    }
-
-    public double length() {
-        int deltaX = endPoint.x - startPoint.x;
-        int deltaY = endPoint.y - startPoint.y;
-        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-    }
-
-}
