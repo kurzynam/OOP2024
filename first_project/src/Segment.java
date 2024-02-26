@@ -6,6 +6,7 @@ class Segment {
     private Point startPoint;
     private Point endPoint;
 
+
     public Segment(Point startPoint, Point endPoint) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
@@ -34,10 +35,65 @@ class Segment {
     }
     public String toSvg() {
 
-        String svgCode = "<svg height=\"240\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">" +
-                lineToSvg() +
-                "</svg>";
-        return svgCode;
+
+        String code = "<svg height=\"240\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">";
+        code += "\n";
+        code += "\t";
+        code += "<line";
+        code += "\n";
+        code += "\t";
+        code += "\t";
+        code += "x1=\"  "+  startPoint.x  +"\"";
+        code += "\n";
+        code += "\t";
+        code += "\t";
+        code += "y1=\"  "+  startPoint.y  +"\"";
+        code += "\n";
+        code += "\t";
+        code += "\t";
+        code += "x2=\"  "+  endPoint.x  +"\"";
+        code += "\n";
+        code += "\t";
+        code += "\t";
+        code += "y2=\"  "+  endPoint.y  +"\"";
+        code += "\n";
+        code += "\t";
+        code += "\t";
+        code += "style = \"stroke:red;";
+        code += "\n";
+        code += "\t";
+        code += "\t";
+        code += "\t";
+        code += "fill:black;";
+        code += "\n";
+        code += "\t";
+        code += "\t";
+        code += "\t";
+        code += "stroke-width:5\"";
+        code += "\n";
+        code += "\t";
+        code += "/>";
+        code += "\n";
+        code += "</svg>";
+
+        return code;
+
+
+
+
+
+
+
+
+
+
+
+//
+//        String svgCode = "<svg height=\"240\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">" +"\n"+
+//                lineToSvg() +
+//                "\n"+
+//                "</svg>";
+//        return svgCode;
     }
 
     public String lineToSvg() {
