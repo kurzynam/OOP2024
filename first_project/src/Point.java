@@ -1,8 +1,8 @@
 import java.lang.Math;
 
 class Point {
-    public final int x;
-    public final int y;
+    public int x;
+    public  int y;
 
     public Point(int x, int y) {
         this.x = x;
@@ -14,6 +14,7 @@ class Point {
                 (p1.x + p2.x)/2,
                 (p1.y + p2.y)/2
         );
+
     }
 }
 
