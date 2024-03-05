@@ -3,15 +3,55 @@ import java.util.Arrays;
 public class Polygon {
     private Point[] points;
 
+    public Style getStyle() {
+        return style;
+    }
+
+    public void setStyle(Style style) {
+        this.style = style;
+    }
+
+    private Style style;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public Point[] getPoints() {
         return points;
     }
     public void setPoints(Point[] points) {
         this.points = points;
     }
+
+
+
+
+
+
     public Polygon(Point[] points) {
         this.points = points;
     }
+
+    public Polygon(Point[] points, Style style) {
+        this.points = points;
+        this.style = style;
+    }
+
+
+
+
+
 
     public Polygon(Polygon other) {
         this.points = new Point[other.points.length];
@@ -21,10 +61,32 @@ public class Polygon {
     }
 
     public String toSvg() {
-        String svgCode = "<svg height=\"240\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">" +
-                polygonToSvg() +
-                "</svg>";
-        return svgCode;
+
+        String code = "\n";
+        code += "\t";
+        code += "<polygon points=\"";
+        for (Point p : points){
+            code += p.getX() + "," + p.getY() + " ";
+        }
+        code += "\"";
+
+
+        code += getStyle().toSvg() + "/>";
+
+
+        code += "\n";
+
+
+
+        return  code;
+
+
+
+
+//        String svgCode = "<svg height=\"240\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">" +
+//                polygonToSvg() +
+//                "</svg>";
+//        return svgCode;
     }
     public String polygonToSvg(){
         StringBuilder svgCode = new StringBuilder();

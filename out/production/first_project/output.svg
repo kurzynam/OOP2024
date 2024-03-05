@@ -1,6 +1,9 @@
 <svg height="300" width="360" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="100,20 180,60 180,140 100,180 20,140 20,60 " style="fill:cyan;stroke:blue;stroke-width:12" />
-    <polygon points="180,100 260,140 260,220 180,260 100,220 100,140 " style="fill:#77FFAA;stroke:blue;stroke-width:12" />
-    <polygon points="260,20 340,60 340,140 260,180 180,140 180,60 " style="fill:#66BB99;stroke:blue;stroke-width:12" />
+    <polygon points="100,20 180,60 180,140 100,180 20,140 20,60 " style="fill:#ffff00;stroke:red;stroke-width:20.0"/>
+    <polygon points="100,20 180,60 180,140 100,180 20,140 20,60 " style="fill:#ffff00;stroke:red;stroke-width:20.0"/>
+    <polygon points="100,20 180,60 180,140 100,180 20,140 20,60 " style="fill:#ffff00;stroke:red;stroke-width:20.0"/>
+    <polygon points="100,20 180,60 180,140 100,180 20,140 20,60 " style="fill:#ffff00;stroke:red;stroke-width:20.0"/>
+    <polygon points="100,20 180,60 180,140 100,180 20,140 20,100 " style="fill:#ffff00;stroke:red;stroke-width:20.0"/>
+    <polygon points="100,20 180,60 180,140 100,180 20,140 20,60 " style="fill:#ffff00;stroke:red;stroke-width:20.0"/>
 
 </svg>
