@@ -1,67 +1,27 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Polygon {
-    private Point[] points;
-
-    public Style getStyle() {
-        return style;
-    }
-
-    public void setStyle(Style style) {
-        this.style = style;
-    }
-
-    private Style style;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public Point[] getPoints() {
+public class Polygon extends Shape{
+    private ArrayList<Point> points;
+    public ArrayList<Point> getPoints() {
         return points;
     }
-    public void setPoints(Point[] points) {
+    public void setPoints(ArrayList<Point> points) {
         this.points = points;
     }
 
-
-
-
-
-
-    public Polygon(Point[] points) {
+    public Polygon(ArrayList<Point> points, Style style) {
+        super(style);
         this.points = points;
     }
-
-    public Polygon(Point[] points, Style style) {
-        this.points = points;
-        this.style = style;
-    }
-
-
-
-
-
-
     public Polygon(Polygon other) {
-        this.points = new Point[other.points.length];
-        for (int i = 0; i < other.points.length; i++) {
-            this.points[i] = new Point(other.points[i].x, other.points[i].y);
+        super(new Style(other.getStyle()));
+        this.points = new ArrayList<>();
+        for (Point point : other.getPoints()) {
+            this.points.add(new Point(point.getX(), point.getY()));
         }
     }
-
     public String toSvg() {
-
         String code = "\n";
         code += "\t";
         code += "<polygon points=\"";
@@ -69,45 +29,17 @@ public class Polygon {
             code += p.getX() + "," + p.getY() + " ";
         }
         code += "\"";
-
-
         code += getStyle().toSvg() + "/>";
-
-
         code += "\n";
-
-
-
         return  code;
-
-
-
-
-//        String svgCode = "<svg height=\"240\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">" +
-//                polygonToSvg() +
-//                "</svg>";
-//        return svgCode;
     }
-    public String polygonToSvg(){
-        StringBuilder svgCode = new StringBuilder();
-        svgCode.append("\t<polygon points=\"");
-        for (Point point : points) {
-            svgCode.append(point.x).append(",").append(point.y).append(" ");
-        }
-        svgCode.append("\" ");
-        svgCode.append("style=\"fill:none;stroke:green;stroke-width:12\" />");
-        return svgCode.toString();
-    }
-
     public  void translate(int x, int y){
-        Point[] newPoints = new Point[points.length];
-
-        for (int i = 0; i < points.length; i++){
-            int newx = points[i].x + x;
-            int newy = points[i].y + y;
-            newPoints[i] = new Point(newx, newy);
+        ArrayList<Point> newPoints = new ArrayList<>();
+        for (int i = 0; i < points.size(); i++){
+            int newx = points.get(i).getX() + x;
+            int newy = points.get(i).getY() + y;
+            newPoints.set(i,new Point(newx, newy));
         }
         setPoints(newPoints);
     }
-
 }

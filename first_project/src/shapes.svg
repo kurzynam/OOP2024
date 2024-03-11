@@ -1,11 +1,41 @@
-<svg height="240" width="500" xmlns="http://www.w3.org/2000/svg">
-    <line
-            x1="  100"
-            y1="  200"
-            x2="  300"
-            y2="  401"
-            style = "stroke:red;
-			fill:black;
-			stroke-width:5"
-    />
+<svg height=" 500 " width="   500" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="100,20 180,60 180,140 100,180 20,140 20,60 " style="fill:#ffff00;stroke:red;stroke-width:5.0">
+        <animate
+                attributeName="points"
+                values="100,20 180,60 180,140 100,180 20,140 20,60;
+                         180,60 180,140 100,180 20,140 20,60 100,20;"
+                dur="1s"
+                repeatCount="indefinite" />
+
+    </polygon>
+
+    <polygon
+            points="300,197 12,209 48,322 "
+            style="fill:yellow;stroke:blue;stroke-width:5.0"
+            transform="rotate(-10 50 100)
+               translate(-3 45.5)
+               skewX(40)
+               scale(1 0.5)">
+    </polygon>
+
+    <polygon points="200,200 200,100 100,100 100,200 " style="fill:black;stroke:gray;stroke-width:5.0">
+        <animate
+                attributeName="points"
+                values="200,200 200,100 100,100 100,200;
+                        100,100 100,0 0,0 0,100;
+                        200,200 200,100 100,100 100,200;"
+                dur="1s"
+                repeatCount="indefinite" />
+
+    </polygon>
+
+    <ellipse id ="e1" cx="100" cy="100" rx="30.0" ry="40.0"
+             style="fill:brown;stroke:blue;stroke-width:5.0">
+        <animate
+                attributeName="rx"
+                values="40;0;40"
+                dur="1s"
+                repeatCount="indefinite" />
+    </ellipse>
+
 </svg>
