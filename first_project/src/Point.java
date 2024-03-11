@@ -1,5 +1,3 @@
-import java.lang.Math;
-
 class Point {
     public int getX() {
         return x;
