@@ -1,29 +1,38 @@
 
-class Segment extends Shape{
-    private Point startPoint;
-    private Point endPoint;
-    public Segment(Style style) {
-        super(style);
+class Segment implements Shape{
+    public Style getStyle() {
+        return style;
     }
-    public Segment(Style style, Point startPoint, Point endPoint) {
-        super(style);
+
+    public void setStyle(Style style) {
+        this.style = style;
+    }
+
+    private Style style;
+    private Vec2 startPoint;
+    private Vec2 endPoint;
+    public Segment(Style style) {
+        this.style = style;
+    }
+    public Segment(Style style, Vec2 startPoint, Vec2 endPoint) {
+        this.style = style;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
     }
 
-    public Point getStartPoint() {
+    public Vec2 getStartPoint() {
         return startPoint;
     }
 
-    public void setStartPoint(Point startPoint) {
+    public void setStartPoint(Vec2 startPoint) {
         this.startPoint = startPoint;
     }
 
-    public Point getEndPoint() {
+    public Vec2 getEndPoint() {
         return endPoint;
     }
 
-    public void setEndPoint(Point endPoint) {
+    public void setEndPoint(Vec2 endPoint) {
         this.endPoint = endPoint;
     }
 
@@ -49,12 +58,12 @@ class Segment extends Shape{
         return code;
     }
 
-    public static Segment perpendicularSegment(Segment segment, Point point) {
+    public static Segment perpendicularSegment(Segment segment, Vec2 point) {
         int dx = segment.getEndPoint().getX() - segment.getStartPoint().getX();
         int dy = segment.getEndPoint().getY() - segment.getStartPoint().getY();
         int newX = point.getX() - dy;
         int newY = point.getY() + dx;
-        Point newEndPoint = new Point(newX, newY);
+        Vec2 newEndPoint = new Vec2(newX, newY);
         return new Segment(new Style(segment.getStyle()), point, newEndPoint);
     }
 
