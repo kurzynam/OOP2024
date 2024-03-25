@@ -28,10 +28,16 @@ public class Main {
         Shape square = new Polygon(pointsForSquare, new Style("black", "gray", 5));
 
         SvgScene scene = new SvgScene();
-        scene.add(hexagon);
-        scene.add(triangle);
-        scene.add(square);
+//        scene.add(hexagon);
+//        scene.add(triangle);
+//        scene.add(square);
 
+        TransformationDecorator.Builder builder = new TransformationDecorator.Builder();
+        Shape transformedShape = builder
+                .rotate(30,new Vec2(10,15))
+                .scale(new Vec2(2,2))
+                .translate(new Vec2(50,0)).build(hexagon);
+        scene.add(transformedShape);
         scene.saveToFile("test.svg");
     }
 

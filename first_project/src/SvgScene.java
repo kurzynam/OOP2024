@@ -35,8 +35,9 @@ public class SvgScene {
     public String toSvg(){
         String code = "<svg height=\"360\" width=\"360\" xmlns=\"http://www.w3.org/2000/svg\">";
         for (Shape poly : shapes){
-            code += "\n\t";
+            code += "\n\t<";
             code += poly.toSvg();
+            code += "/>";
         }
         code += "</svg>";
         return code;

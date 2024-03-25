@@ -1,4 +1,4 @@
-class Vec2 {
+public class Vec2 {
     public int getX() {
         return x;
     }

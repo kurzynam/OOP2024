@@ -31,14 +31,12 @@ public class Polygon implements Shape{
         }
     }
     public String toSvg() {
-        String code = "\n";
-        code += "\t";
-        code += "<polygon points=\"";
+        String code = "polygon points=\"";
         for (Vec2 p : points){
             code += p.getX() + "," + p.getY() + " ";
         }
         code += "\"";
-        code += getStyle().toSvg() + "/>";
+        code += getStyle().toSvg();
         code += "\n";
         return  code;
     }
