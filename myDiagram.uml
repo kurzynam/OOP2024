@@ -5,12 +5,13 @@ object "Ewa Kowalska" as EwaKowalska
 object "Krystyna Dąbrowska" as KrystynaDąbrowska
 object "Anna Dąbrowska" as AnnaDąbrowska
 object "Marek Kowalski" as MarekKowalski
-object "Tomasz Dąbrowski" as TomaszDąbrowski #FFFF00
-Anna Dąbrowska <-- Marek Kowalski
-Krystyna Dąbrowska <-- Marek Kowalski
-Andrzej Kowalski <-- Marek KowalskiAlicja Wiśniewska <-- Anna Dąbrowska
-Andrzej Kowalski <-- Ewa Kowalska
-Tomasz Dąbrowski <-- Anna Dąbrowska
-Anna Dąbrowska <-- Ewa Kowalska
-Krystyna Dąbrowska <-- Ewa Kowalska
+object "Tomasz Dąbrowski" as TomaszDąbrowski
+AnnaDąbrowska <-- MarekKowalski
+KrystynaDąbrowska <-- MarekKowalski
+AndrzejKowalski <-- MarekKowalski
+AlicjaWiśniewska <-- AnnaDąbrowska
+AndrzejKowalski <-- EwaKowalska
+TomaszDąbrowski <-- AnnaDąbrowska
+AnnaDąbrowska <-- EwaKowalska
+KrystynaDąbrowska <-- EwaKowalska
 @enduml
